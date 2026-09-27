@@ -1,4 +1,3 @@
-
 import asyncio
 import logging
 import aiosqlite
@@ -17,10 +16,9 @@ import aiohttp
 BOT_TOKEN = "8854394740:AAHg-0MXjYlmx8oX_So1TM9qRTsR4tXi6Ik"
 ADMIN_IDS = [8318241400]
 
-# Majburiy kanallar (o'zingiznikiga o'zgartiring)
+# Majburiy kanal (Faqat siz bergan ID)
 REQUIRED_CHANNELS = [
-    {"id": -1001234567890, "link": "https://t.me/your_channel1", "name": "Anime News"},
-    {"id": -1009876543210, "link": "https://t.me/your_channel2", "name": "Anime Community"},
+    {"id": -1003940243822, "link": "https://t.me/kanalingiz_linki", "name": "Kanal Nomi"},
 ]
 
 logging.basicConfig(level=logging.INFO)
@@ -165,7 +163,7 @@ async def cmd_start(message: Message):
     if not await check_subscription(user.id):
         await message.answer(
             "<b>🔐 Majburiy obuna</b>\n\n"
-            "Botdan foydalanish uchun quyidagi kanallarga obuna bo‘ling:",
+            "Botdan foydalanish uchun quyidagi kanalga obuna bo‘ling:",
             reply_markup=subscribe_keyboard()
         )
         return
@@ -186,7 +184,7 @@ async def check_sub_callback(callback: CallbackQuery):
             reply_markup=main_menu()
         )
     else:
-        await callback.answer("❌ Hali barcha kanallarga obuna bo‘lmadingiz!", show_alert=True)
+        await callback.answer("❌ Hali kanalga obuna bo‘lmadingiz!", show_alert=True)
 
 @dp.callback_query(F.data == "back_main")
 async def back_to_main(callback: CallbackQuery):
