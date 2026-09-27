@@ -16,9 +16,9 @@ import aiohttp
 BOT_TOKEN = "8854394740:AAHg-0MXjYlmx8oX_So1TM9qRTsR4tXi6Ik"
 ADMIN_IDS = [8318241400]
 
-# Majburiy kanal (Faqat siz bergan ID)
+# Majburiy kanal
 REQUIRED_CHANNELS = [
-    {"id": -1003940243822, "link": "https://t.me/kanalingiz_linki", "name": "Kanal Nomi"},
+    {"id": -1003940243822, "link": "https://t.me/anizone_2", "name": "AniZone"},
 ]
 
 logging.basicConfig(level=logging.INFO)
